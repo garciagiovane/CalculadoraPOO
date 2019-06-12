@@ -24,13 +24,13 @@ public class Calculadora extends Historico {
 		try {
 			Operacao oper = operacoes.get(operacao);
 			if (oper instanceof Divisao && b == 0) {
-				 return "N„o pode divir por zero!";
+				 return "N√£o pode divir por zero!";
 			}
 			double resultado = oper.calcular(a, b);
 			gravarOperacao(oper);
 			return "Resultado: " + resultado;
 		} catch (Exception e) {
-			return "OperaÁ„o inv·lida!";
+			return "Opera√ß√£o inv√°lida!";
 		}
 	}
 

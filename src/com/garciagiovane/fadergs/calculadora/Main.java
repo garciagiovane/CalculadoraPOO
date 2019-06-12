@@ -9,12 +9,12 @@ public class Main {
 		Scanner leitura = new Scanner(System.in);
 		
 		while (true) {
-			System.out.println("********** Selecione a operação **********"
+			System.out.println("********** Selecione a operaÃ§Ã£o **********"
 					+ "\n(+) - Soma"
-					+ "\n(-) - Subtração"
-					+ "\n(*) - Multiplicação"
-					+ "\n(/) - Divisão"
-					+ "\n(H) - Histórico"
+					+ "\n(-) - SubtraÃ§Ã£o"
+					+ "\n(*) - MultiplicaÃ§Ã£o"
+					+ "\n(/) - DivisÃ£o"
+					+ "\n(h) - HistÃ³rico"
 					+ "\n(0) - Sair");
 			String operacao = leitura.next();
 			
@@ -22,11 +22,15 @@ public class Main {
 				System.out.println("Sistema encerrado!");
 				System.exit(0);
 			} else if (operacao.equalsIgnoreCase("h")) {
-				calculadora.mostrarHistorico().forEach(ops -> System.out.println(ops));
+				if (calculadora.mostrarHistorico().isEmpty()) {
+					System.out.println("Nenhuma operaÃ§Ã£o foi realizada");
+				} else {
+					calculadora.mostrarHistorico().forEach(ops -> System.out.println(ops));
+				}				
 			} else {
-				System.out.println("Digite o 1º valor");
+				System.out.println("Digite o 1Âº valor");
 				double a = leitura.nextDouble();
-				System.out.println("Digite o 2º valor");
+				System.out.println("Digite o 2Âº valor");
 				double b = leitura.nextDouble();
 				
 				System.out.println(calculadora.calcular(a, b, operacao));
